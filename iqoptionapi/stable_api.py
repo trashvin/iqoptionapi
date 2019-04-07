@@ -863,3 +863,10 @@ class IQ_Option:
             return True, self.api.overnight_fee["msg"]
         else:
             return False, None
+
+    def set_active(self, active):
+        self.api.chart_data = None
+        self.api.setactives([OP_code.ACTIVES[active]])
+        while self.api.chart_data == None:
+            pass
+        return self.api.chart_data

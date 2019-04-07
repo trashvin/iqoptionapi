@@ -118,6 +118,8 @@ class IQOptionAPI(object):  # pylint: disable=too-many-instance-attributes
     tpsl_changed_respond=None
     auto_margin_call_changed_respond=None
     #------------------
+    chart_data = None
+    #---------------------------
     def __init__(self, host, username, password, proxies=None):
         """
         :param str host: The hostname or ip address of a IQ Option server.
